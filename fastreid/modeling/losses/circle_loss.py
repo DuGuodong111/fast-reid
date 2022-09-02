@@ -15,6 +15,9 @@ def pairwise_circleloss(
         targets: torch.Tensor,
         margin: float,
         gamma: float, ) -> torch.Tensor:
+        #这里的circle loss的实现 更全面 而且更优雅
+        
+    #注意这个正则化    
     embedding = F.normalize(embedding, dim=1)
 
     dist_mat = torch.matmul(embedding, embedding.t())
